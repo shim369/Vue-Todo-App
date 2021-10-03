@@ -24,29 +24,30 @@ body{
     font-style: italic;
   }
 }
-h2{
-  font-size: 18px;
-  color: #fff;
-  background-color: #51596a;
-  padding: 10px 10px 5px;
-  span{
-    &.info{
-      color: #bbb;
-      font-size: 12px;
-      font-weight: normal;
-    }
-  }
-  button{
-    float: right;
-    padding: 0px 10px;
-    cursor: pointer;
-  }
-}
+
 .main{
   width: 90%;
   margin: 0 auto;
   background-color: #fff;
   padding: 5px;
+  h2{
+    font-size: 18px;
+    color: #fff;
+    background-color: #51596a;
+    padding: 10px 10px 5px;
+    span{
+      &.info{
+        color: #bbb;
+        font-size: 12px;
+        font-weight: normal;
+      }
+    }
+    button{
+      float: right;
+      padding: 0px 10px;
+      cursor: pointer;
+    }
+  }
   ul{
     list-style: none;
     margin-bottom: 30px;
