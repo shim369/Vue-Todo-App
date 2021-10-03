@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Todo App</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app" class="container">
+    <header class="header">
+      <h1>
+        Todo App
+      </h1>
+    </header>
+    <main class="main">
+      <h2>
+      残りのTodo
+      <span class="info">({{ remaining.length }}/{{ todos.length }})</span>
+      <button @click="purge">選択したTodoを一括削除</button>
+      </h2>
+      <ul v-if="todos.length">
+        <li v-for="(todo, index) in todos">
+          <input type="checkbox" v-model="todo.isDone">
+          <span :class="{done: todo.isDone}">{{ todo.title }}</span>
+          <span @click="deleteItem(index)" class="command">[x]</span>
+        </li>
+      </ul>
+      <p v-else class="start">
+          Todoを追加しよう！
+      </p>
+      <div class="btns">
+        <form @submit.prevent="addItem">
+          <input type="text" v-model="newItem">
+          <input type="submit" value="追加">
+        </form>
+      </div>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
