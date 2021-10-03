@@ -10,15 +10,13 @@
 <body>
   <div id="app" class="container">
     <header class="header">
-      <h1>
-        Todo App
-      </h1>
+      <h1>Todo App</h1>
+      <button @click="purge">一括削除</button>
     </header>
     <main class="main">
       <h2>
       残りのTodo
       <span class="info">({{ remaining.length }}/{{ todos.length }})</span>
-      <button @click="purge">選択したTodoを一括削除</button>
       </h2>
       <ul v-if="todos.length">
         <li v-for="(todo, index) in todos">
