@@ -22,7 +22,7 @@
         <li v-for="(todo, index) in todos">
           <input type="checkbox" v-model="todo.isDone">
           <span :class="{done: todo.isDone}">{{ todo.title }}</span>
-          <span @click="deleteItem(index)" class="command">[x]</span>
+          <span @click="deleteItem(index)" class="command"><img src="img/batsu.png" alt="削除"></span>
         </li>
       </ul>
       <p v-else class="start">

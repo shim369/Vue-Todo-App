@@ -73,9 +73,9 @@ body{
           color: #bbb;
         }
         &.command{
-          font-size: 12px;
-          color: $color-orange;
           cursor: pointer;
+          position: relative;
+          top: -4px;
         }
       }
     }
