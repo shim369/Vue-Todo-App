@@ -15,7 +15,7 @@
     </header>
     <main class="main">
       <h2>
-      残りのTodo
+      今日のTodo
       <span class="info">({{ remaining.length }}/{{ todos.length }})</span>
       </h2>
       <ul v-if="todos.length">
@@ -28,14 +28,14 @@
       <p v-else class="start">
           Todoを追加しよう！
       </p>
+        <form @submit.prevent="addItem">
+          <div class="btns">
+            <input type="text" v-model="newItem">
+            <input type="submit" value="追加">
+          </div>
+        </form>
     </main>
     <footer class="footer">
-      <div class="btns">
-        <form @submit.prevent="addItem">
-          <input type="text" v-model="newItem">
-          <input type="submit" value="追加">
-        </form>
-      </div>
     </footer>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
