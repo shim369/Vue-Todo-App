@@ -37,6 +37,7 @@ body{
   width: 60%;
   background-color: $sub_back;
   padding: 5px;
+  margin: 0 2%;
   h2{
     font-size: 22px;
     color: $sub_back;
@@ -136,7 +137,7 @@ body{
 /* calendar
 ----------------------------------*/
 .aside {
-  width: 30%;
+  margin: 0 2%;
   table {
     width: 100%;
     border-collapse: collapse;
