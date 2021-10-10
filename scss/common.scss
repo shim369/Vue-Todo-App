@@ -25,15 +25,13 @@
  clear: both;
 }
 
-.clearfix {
- display: inline-block;
- &:after {
-  content: ".";
-  display: block;
-  height: 0px;
-  clear: both;
-  visibility: hidden;
- }
+
+.clearfix{
+  &:after{
+    content: "";
+    clear: both;
+    display: block;
+  }
 }
 
 .bold {
