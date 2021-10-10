@@ -141,7 +141,7 @@ body{
   table {
     width: 100%;
     border-collapse: collapse;
-    border: 2px solid #eee;
+    border: 5px solid $sub_back;
     font-size: 17px;
     #prev,#next,#today{
       cursor: pointer;
@@ -153,22 +153,24 @@ body{
     }
     thead,
     tfoot {
-      background: #eee;
+      color: $sub_back;
+      background: $sub_color1;
     }
     tbody {
-      background: #fff;
+      background: $sub_back;
       td{
         &:first-child{
-          color: red;
+          color: $color-orange;
         }
         &:last-child{
-          color: blue;
+          color: $base_color;
         }
-        &.disable {
+        &.disabled {
           opacity: 0.3;
         }
         &.today {
           font-weight: bold;
+          background: $sub_gray;
         }
       }
     }
