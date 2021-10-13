@@ -62,6 +62,18 @@
             </tr>
           </tfoot>
         </table>
+        
+        <div id="open">
+          動画を見る
+        </div>
+        <div id="mask" class="hidden">
+          <section id="modal" class="hidden">
+            <div id="youtube_box"></div>
+            <div id="close">
+              閉じる
+            </div>
+          </section>
+        </div>
         <ul class="links">
           <li><a href="https://github.com/shim369" target="_blank">Github</a></li>
           <li><a href="https://dotinstall.com/home" target="_blank">Dotinstall</a></li>
@@ -211,6 +223,42 @@
  });
 
  createCalendar();
+
+ {
+  const open = document.getElementById('open');
+  const close = document.getElementById('close');
+  const modal = document.getElementById('modal');
+  const mask = document.getElementById('mask');
+
+  open.addEventListener('click',()=>{
+    modal.classList.remove('hidden');
+    mask.classList.remove('hidden');
+  });
+  
+  close.addEventListener('click',()=>{
+    modal.classList.add('hidden');
+    mask.classList.add('hidden');
+  }); 
+
+  mask.addEventListener('click',()=>{
+    // modal.classList.add('hidden');
+    // mask.classList.add('hidden');
+    close.click();
+  });
+
+const videos   = [
+  "3KKlcKt7Zac",
+  "QzcTkVSGQBg",
+  "t0mWGmOlw6M",
+  "F_8_v4Ye5ug",
+  "Kk0Ua-Idzwo"
+];
+
+let video = videos[Math.floor(Math.random() * videos.length)];
+
+let frame = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+document.getElementById('youtube_box').innerHTML = frame;
+ }
  </script>
 </body>
 </html>
