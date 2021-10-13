@@ -256,7 +256,7 @@ const videos   = [
 
 let video = videos[Math.floor(Math.random() * videos.length)];
 
-let frame = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+let frame = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 document.getElementById('youtube_box').innerHTML = frame;
  }
  </script>
