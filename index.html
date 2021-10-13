@@ -233,6 +233,23 @@
   open.addEventListener('click',()=>{
     modal.classList.remove('hidden');
     mask.classList.remove('hidden');
+    const videos = [
+      "3KKlcKt7Zac",
+      "QzcTkVSGQBg",
+      "t0mWGmOlw6M",
+      "F_8_v4Ye5ug",
+      "Kk0Ua-Idzwo",
+      "6aIIUxPGgdI",
+      "a3uBXTKJyrI",
+      "a3uBXTKJyrI",
+      "799z9cygU0s",
+      "i1uXiEIv70U"
+    ];
+
+    let video = videos[Math.floor(Math.random() * videos.length)];
+
+    let frame = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    youtube_box.innerHTML = frame;
   });
   
   close.addEventListener('click',()=>{
@@ -245,19 +262,6 @@
     // mask.classList.add('hidden');
     close.click();
   });
-
-const videos   = [
-  "3KKlcKt7Zac",
-  "QzcTkVSGQBg",
-  "t0mWGmOlw6M",
-  "F_8_v4Ye5ug",
-  "Kk0Ua-Idzwo"
-];
-
-let video = videos[Math.floor(Math.random() * videos.length)];
-
-let frame = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-document.getElementById('youtube_box').innerHTML = frame;
  }
  </script>
 </body>
