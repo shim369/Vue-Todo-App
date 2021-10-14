@@ -229,7 +229,8 @@
   const close = document.getElementById('close');
   const modal = document.getElementById('modal');
   const mask = document.getElementById('mask');
-
+  
+  let frame;
   open.addEventListener('click',()=>{
     modal.classList.remove('hidden');
     mask.classList.remove('hidden');
@@ -248,13 +249,15 @@
 
     let video = videos[Math.floor(Math.random() * videos.length)];
 
-    let frame = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    frame = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}" title="YouTube video player" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
     youtube_box.innerHTML = frame;
   });
   
   close.addEventListener('click',()=>{
     modal.classList.add('hidden');
     mask.classList.add('hidden');
+    frame = "";
+    youtube_box.innerHTML = frame;
   }); 
 
   mask.addEventListener('click',()=>{
