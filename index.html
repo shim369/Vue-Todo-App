@@ -236,7 +236,17 @@
  }
 //Timer
 // modal & YouTube
+// alert sound
  {
+  function sound(type, sec) {
+	const ctx = new AudioContext()
+	const osc = ctx.createOscillator()
+	osc.type = type
+	osc.connect(ctx.destination)
+	osc.start()
+	osc.stop(sec)
+}
+
   let timer = document.getElementById('timer');
   let reset = document.getElementById('reset');
   let start = document.getElementById('start');
@@ -266,6 +276,7 @@
         timeLeft = 0;
         timeToCountDown = 1500 * 1000;
         updateTimer(timeLeft);
+        sound("sine", 0.3);
         modalOpen();
         return;
       }
@@ -313,7 +324,7 @@
 
     let video = videos[Math.floor(Math.random() * videos.length)];
 
-    frame = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}?autoplay=1" title="YouTube video player" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    frame = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}" title="YouTube video player" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
     youtube_box.innerHTML = frame;
   }
 
