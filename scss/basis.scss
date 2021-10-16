@@ -35,12 +35,12 @@ body{
 ----------------------------------*/
 .main{
   width: 70%;
-  background-color: $sub_back;
+  background-color: $color-white;
   padding: 5px;
   margin: 0 2%;
   h2{
     font-size: 22px;
-    color: $sub_back;
+    color: $color-white;
     background-color: $sub_color1;
     padding: 20px 15px 20px;
     span{
@@ -103,13 +103,16 @@ body{
     }
     &[type=submit] {
       border: none;
-      background: $base_color;
+      background: $color-orange;
       border-radius: 3px;
       color: #fff;
       width: auto;
       cursor: pointer;
       padding: 0 20px;
       margin: 0 10px 0;
+      &:hover {
+        opacity: .9;
+      }
     }
   }
   .start{
@@ -141,9 +144,10 @@ body{
   table {
     width: 100%;
     border-collapse: collapse;
-    border: 5px solid $sub_back;
+    border: 5px solid $color-white;
     font-size: 17px;
     margin-top: 30px;
+    background-color: $color-white;
     #prev,#next,#today{
       cursor: pointer;
       user-select: none;
@@ -152,13 +156,12 @@ body{
       padding: 8px;
       text-align: center;
     }
-    thead,
-    tfoot {
-      color: $sub_back;
+    thead{
+      color: $color-white;
       background: $sub_color1;
     }
     tbody {
-      background: $sub_back;
+      background: $color-white;
       td{
         &:first-child{
           color: $color-orange;
@@ -176,11 +179,15 @@ body{
       }
     }
     tfoot {
-      font-weight: bold;
+      background-color: $color-orange;
+      color: $txt_color2;
+      &:hover {
+        opacity: .9;
+      }
     }
   }
   .links{
-    background: $sub_back;
+    background: $color-white;
     margin-top: 30px;
     list-style: none;
     border-top: 1px solid $color_gray;
@@ -205,7 +212,7 @@ body{
 /* timer
 ----------------------------------*/
 .timerbox {
-  background-color: $sub_back;
+  background-color: $color-white;
   padding: 5px;
   margin-bottom: 30px;
   #timer{
@@ -230,11 +237,10 @@ body{
 #open,#close {
   cursor: pointer;
   width: 100%;
-  border-radius: 4px;
   text-align: center;
-  padding: 15px 0;
+  padding: 8px 0;
   margin: 5px auto 0;
-  background-color: $base_color;
+  background-color: $color-orange;
   color: $txt_color2;
   font-size: 16px;
   &:hover {
