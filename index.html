@@ -95,57 +95,7 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="js/main.js"></script>
   <script>
-    //Timer
-{
-  let timer = document.getElementById('timer');
-  let reset = document.getElementById('reset');
-  let start = document.getElementById('start');
-  let stop = document.getElementById('stop');
 
-
-  let startTime;
-  let timeLeft;
-  let timeToCountDown = 1500 * 1000;
-  let timerId;
-  var isRunning = false;
-
-  function updateTimer(t) {
-    let d = new Date(t);
-    let m = d.getMinutes();
-    let s = d.getSeconds();
-    m = ('0' + m).slice(-2);
-    s = ('0' + s).slice(-2);
-    timer.textContent = m + ':' + s;
-  }
-
-  function countDown() {
-    timerId = setTimeout(() => {
-      timeLeft = timeToCountDown - (Date.now() - startTime);
-      if (timeLeft < 0) {
-        clearTimeout(timerId);
-        timeLeft = 0;
-        timeToCountDown = 1500 * 1000;
-        updateTimer(timeLeft);
-        return;
-      }
-      updateTimer(timeLeft);
-      countDown();
-    }, 10);
-  }
-
-  start.addEventListener('click', () => {
-    startTime = Date.now();
-    countDown();
-  });
-  stop.addEventListener('click', () => {
-      timeToCountDown = timeLeft;
-      clearTimeout(timerId);
-  });
-  reset.addEventListener('click', () => {
-    timeToCountDown = 1500 * 1000;
-    updateTimer(timeToCountDown);
-  });
-}
     // Calendar
   {
     const today = new Date();
@@ -284,15 +234,68 @@
  });
  createCalendar();
  }
+//Timer
 // modal & YouTube
  {
+  let timer = document.getElementById('timer');
+  let reset = document.getElementById('reset');
+  let start = document.getElementById('start');
+  let stop = document.getElementById('stop');
+
+
+  let startTime;
+  let timeLeft;
+  let timeToCountDown = 1500 * 1000;
+  let timerId;
+  var isRunning = false;
+
+  function updateTimer(t) {
+    let d = new Date(t);
+    let m = d.getMinutes();
+    let s = d.getSeconds();
+    m = ('0' + m).slice(-2);
+    s = ('0' + s).slice(-2);
+    timer.textContent = m + ':' + s;
+  }
+
+  function countDown() {
+    timerId = setTimeout(() => {
+      timeLeft = timeToCountDown - (Date.now() - startTime);
+      if (timeLeft < 0) {
+        clearTimeout(timerId);
+        timeLeft = 0;
+        timeToCountDown = 1500 * 1000;
+        updateTimer(timeLeft);
+        modalOpen();
+        return;
+      }
+      updateTimer(timeLeft);
+      countDown();
+    }, 10);
+  }
+
+  start.addEventListener('click', () => {
+    startTime = Date.now();
+    countDown();
+  });
+  stop.addEventListener('click', () => {
+      timeToCountDown = timeLeft;
+      clearTimeout(timerId);
+  });
+  reset.addEventListener('click', () => {
+    timeToCountDown = 1500 * 1000;
+    updateTimer(timeToCountDown);
+  });
+
   const open = document.getElementById('open');
   const close = document.getElementById('close');
   const modal = document.getElementById('modal');
   const mask = document.getElementById('mask');
   
   let frame;
-  open.addEventListener('click',()=>{
+
+  function modalOpen() {
+    
     modal.classList.remove('hidden');
     mask.classList.remove('hidden');
     const videos = [
@@ -310,8 +313,12 @@
 
     let video = videos[Math.floor(Math.random() * videos.length)];
 
-    frame = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}" title="YouTube video player" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    frame = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}?autoplay=1" title="YouTube video player" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
     youtube_box.innerHTML = frame;
+  }
+
+  open.addEventListener('click',()=>{
+    modalOpen();
   });
   
   close.addEventListener('click',()=>{
