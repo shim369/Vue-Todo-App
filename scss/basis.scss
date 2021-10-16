@@ -26,6 +26,26 @@ body{
     font-style: italic;
     margin-left: 20px;
   }
+  .links{
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+    li{
+      padding: 10px 30px;
+      font-size: 16px;
+      line-height: 1.5;
+      border-bottom: 1px solid $color_gray;
+      &:hover{
+        opacity: .8;
+      }
+      a{
+        display: block;
+        color: $base_color;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }
 }
 /* wrap
 ----------------------------------*/
@@ -187,28 +207,6 @@ body{
       color: $txt_color2;
       &:hover {
         opacity: .9;
-      }
-    }
-  }
-  .links{
-    background: $color-white;
-    margin-top: 30px;
-    list-style: none;
-    border-top: 1px solid $color_gray;
-    li{
-      padding: 10px 20px;
-      font-size: 16px;
-      line-height: 1.5;
-      border-bottom: 1px solid $color_gray;
-      &:hover{
-        opacity: .8;
-      }
-      a{
-        display: block;
-        color: $base_color;
-      }
-      &:nth-child(odd){
-        background-color: $sub_gray;
       }
     }
   }
