@@ -4,7 +4,11 @@
 
 body{
   font-family: $base_font;
-  background-color: $base_color;
+  background: #19919c; /* Old browsers */
+  background: -moz-linear-gradient(top, #19919c 0%, #791993 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #19919c 0%,#791993 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #19919c 0%,#791993 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#19919c', endColorstr='#791993',GradientType=0 ); /* IE6-9 */
   color: $sub_color1;
 }
 
