@@ -4,10 +4,10 @@
 
 body{
   font-family: $base_font;
-  background: #19919c; /* Old browsers */
-  background: -moz-linear-gradient(bottom right, #19919c 0%, #2a3f66 55%, #2a3f66 70%, #b98421 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(bottom right, #19919c 0%,#2a3f66 55%,#2a3f66 70%,#b98421 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom right, #19919c 0%,#2a3f66 55%,#2a3f66 70%,#b98421 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  // background: #19919c;
+  // background: -webkit-linear-gradient(top left, #19919c 0%,#2a3f66 50%,#2a3f66 73%,#b98421 100%); 
+  background: -webkit-linear-gradient(top left, #19919c 0%,#2a3f66 100%);
+  background: linear-gradient(to bottom right, #19919c 0%,#2a3f66 100%);
   color: $sub_color1;
 }
 
