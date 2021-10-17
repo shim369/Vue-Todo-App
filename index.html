@@ -95,10 +95,8 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script src="js/main.js"></script>
   <script>
-
-    // Calendar
-  {
-    const today = new Date();
+ // Calendar
+ const today = new Date();
  let year = today.getFullYear();
  let month = today.getMonth();
 
@@ -230,20 +228,17 @@
    createCalendar();
  });
  createCalendar();
- }
-//Timer
-// modal & YouTube
-// alert sound
- {
-  function sound(type, sec) {
-	const ctx = new AudioContext()
-	const osc = ctx.createOscillator()
-	osc.type = type
-	osc.connect(ctx.destination)
-	osc.start()
-	osc.stop(sec)
-}
 
+  // alert sound
+  function sound(type, sec) {
+    const ctx = new AudioContext()
+    const osc = ctx.createOscillator()
+    osc.type = type
+    osc.connect(ctx.destination)
+    osc.start()
+    osc.stop(sec)
+  }
+  //Timer
   let timer = document.getElementById('timer');
   let reset = document.getElementById('reset');
   let start = document.getElementById('start');
@@ -295,6 +290,7 @@
     updateTimer(timeToCountDown);
   });
 
+  // modal & YouTube
   const open = document.getElementById('open');
   const close = document.getElementById('close');
   const modal = document.getElementById('modal');
@@ -367,7 +363,6 @@
     // mask.classList.add('hidden');
     close.click();
   });
- }
  </script>
 </body>
 </html>
