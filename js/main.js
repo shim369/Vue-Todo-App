@@ -5,6 +5,7 @@
     el: '#app',
     data: {
       newItem: '',
+      newLink: '',
       todos: []
     },
     watch: {
@@ -23,10 +24,12 @@
       addItem: function(){
         var item = {
           title: this.newItem,
+          link: this.newLink,
           isDone: false
         };
         this.todos.push(item);
         this.newItem = '';
+        this.newLink = '';
       },
       deleteItem: function(index){
         if (confirm('are you sure?')){
