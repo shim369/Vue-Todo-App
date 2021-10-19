@@ -6,16 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue Todo App</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+
+  </style>
 </head>
 <body>
   <div id="app">
     <header class="header">
       <h1>Todo App</h1>
-      <ul class="links">
-        <li><a href="https://github.com/shim369" target="_blank">Github</a></li>
-        <li><a href="https://dotinstall.com/home" target="_blank">Dotinstall</a></li>
-        <li><a href="https://prog-8.com/dashboard" target="_blank">Progate</a></li>
-      </ul>
+      <nav id="header_nav">
+        <ul>
+          <li><a href="https://github.com/shim369" target="_blank">Github</a></li>
+          <li><a href="https://dotinstall.com/home" target="_blank">Dotinstall</a></li>
+          <li><a href="https://prog-8.com/dashboard" target="_blank">Progate</a></li>
+        </ul>
+      </nav> 
     </header>
     <div class="wrap">
       <main class="main">
@@ -34,8 +39,8 @@
         <p v-else class="start">
             Todoを追加しよう！
         </p>
-          <form @submit.prevent="addItem" class="t-m20">
-            <div class="">
+          <form @submit.prevent="addItem" class="t-m10">
+            <div class="btns">
               <input type="text" v-model="newItem" placeholder="Todoタイトル">
               <input type="text" v-model="newLink" placeholder="URL">
               <input type="submit" value="追加">
@@ -344,7 +349,7 @@
 
     let video = videos[Math.floor(Math.random() * videos.length)];
 
-    frame = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${video}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    frame = `<iframe width="100%" height="315" src="https://www.youtube.com/embed/${video}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
     youtube_box.innerHTML = frame;
   }
 
