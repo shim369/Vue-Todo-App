@@ -46,7 +46,14 @@
         <ul v-if="todos.length">
           <li v-for="(todo, index) in todos">
             <input class="blue" type="checkbox" v-model="todo.isDone">
-            <span :class="{done: todo.isDone}"><a :href="todo.link" target="_blank">{{ todo.title }}</a></span>
+            <span :class="{done: todo.isDone}">
+              <span v-if="todo.link">
+                <a :href="todo.link" target="_blank">{{ todo.title }}</a>
+              </span>
+              <span v-else>
+                {{ todo.title }}
+              </span>
+            </span>
             <span @click="deleteItem(index)" class="command"><img src="img/batsu.png" alt="削除"></span>
           </li>
         </ul>
