@@ -201,6 +201,8 @@ body{
       padding: 10px 20px;
       font-size: 16px;
       line-height: 1.5;
+      padding-left: 2em;
+      text-indent: -1.5em;
       border-bottom: 1px solid $color_gray;
       &:nth-child(odd){
         background-color: $sub_gray;
