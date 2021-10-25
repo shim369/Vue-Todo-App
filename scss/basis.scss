@@ -211,11 +211,17 @@ body{
         &.done{
           text-decoration: line-through;
           color: #bbb;
+          a {
+            color: #bbb;
+          }
         }
         &.command{
           cursor: pointer;
           position: relative;
           top: -4px;
+        }
+        a {
+          color: $sub_color1;
         }
       }
     }
