@@ -247,8 +247,11 @@ body{
       margin: 0 0 5px;
       padding: 10px 12px;
       box-sizing: border-box;
-      background: #ececec;
-      color: darken(#f9f9f9, 50%);
+      background: $sub_color2;
+      color: $color-white;
+      &::placeholder {
+        color: $color_gray2;
+      }
       &:focus {
         outline: none;
       }

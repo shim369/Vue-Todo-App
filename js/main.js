@@ -32,7 +32,7 @@
         this.newLink = '';
       },
       deleteItem: function(index){
-        if (confirm('are you sure?')){
+        if (confirm('ホントに削除する?')){
           this.todos.splice(index, 1);
         }
       },
