@@ -161,6 +161,18 @@ body{
   }
 }
 
+/* main
+----------------------------------*/
+.main{
+  width: 70%;
+  min-width: 290px;
+  margin: 0 2%;
+  box-shadow: 0px 3px 3px 3px rgba(42,63,102,0.2);
+  @include for-size(phone-only) {
+    width: 96%;
+  }
+}
+
 /* add-list
 ----------------------------------*/
 .add-list {
@@ -177,6 +189,24 @@ body{
     font-style: italic;
     background-color: #2c394b;
     padding: 20px 15px 20px;
+    span{
+      &.info{
+        color: $color_gray2;
+        font-size: 15px;
+        font-weight: normal;
+      }
+    }
+    button{
+      float: right;
+      padding: 3px 20px 3px;
+      cursor: pointer;
+      background-color: $color-red;
+      border: none;
+      color: $color-white;
+      &:hover{
+        opacity: 0.9;
+      }
+    }
     input {
       float: right;
       &[type=submit] {
@@ -215,43 +245,6 @@ body{
             outline: none;
           }
         }
-      }
-    }
-  }
-}
-
-/* main
-----------------------------------*/
-.main{
-  width: 70%;
-  min-width: 290px;
-  margin: 0 2%;
-  box-shadow: 0px 3px 3px 3px rgba(42,63,102,0.2);
-  @include for-size(phone-only) {
-    width: 96%;
-  }
-  h2{
-    font-size: 22px;
-    color: $color-white;
-    font-style: italic;
-    background-color: $sub_color1;
-    padding: 20px 15px 20px;
-    span{
-      &.info{
-        color: $color_gray2;
-        font-size: 15px;
-        font-weight: normal;
-      }
-    }
-    button{
-      float: right;
-      padding: 3px 20px 3px;
-      cursor: pointer;
-      background-color: $color-red;
-      border: none;
-      color: $color-white;
-      &:hover{
-        opacity: 0.9;
       }
     }
   }
