@@ -4,9 +4,9 @@
 
 body{
   font-family: $base_font;
-  background: #19919c;
-  background: -webkit-linear-gradient(top left, #19919c 0%,#2a3f66 100%);
-  background: linear-gradient(to bottom right, #19919c 0%,#2a3f66 100%);
+  background: $base_color;
+  background: -webkit-linear-gradient(top left, $sub_color2 0%,$sub_color1 100%);
+  background: linear-gradient(to bottom right, $sub_color2 0%,$sub_color1 100%);
   color: $sub_color1;
 }
 
@@ -94,9 +94,9 @@ body{
   bottom: 0;
   right: 0;
   left: 0;
-  background: #19919c;
-  background: -webkit-linear-gradient(top left, #19919c 0%,#2a3f66 100%);
-  background: linear-gradient(to bottom right, #19919c 0%,#2a3f66 100%);
+  background: $base_color;
+  background: -webkit-linear-gradient(top left, $base_color 0%,$sub_color1 100%);
+  background: linear-gradient(to bottom right, $base_color 0%,$sub_color1 100%);
   text-align: center;
   padding: 64px 35%;
   opacity: 0;
@@ -120,7 +120,7 @@ body{
       }
       a {
         font-size: 23px;
-        color: #fff;
+        color: $color-white;
       }
     }
   }
@@ -130,7 +130,7 @@ body{
     right: 16px;
     font-size: 32px;
     cursor: pointer;
-    color: #fff;
+    color: $color-white;
   }
   ul {
     list-style-type: none;
@@ -175,7 +175,7 @@ body{
     padding: 20px 15px 20px;
     span{
       &.info{
-        color: #bbb;
+        color: $color_gray2;
         font-size: 15px;
         font-weight: normal;
       }
@@ -185,10 +185,10 @@ body{
       padding: 3px 20px 3px;
       cursor: pointer;
       margin-right: 5px;
-      background-color: #f48c04;
+      background-color: $color-red;
       border: none;
       border-radius: 3px;
-      color: #fff;
+      color: $color-white;
       &:hover{
         opacity: 0.9;
       }
@@ -210,15 +210,15 @@ body{
       span{
         &.done{
           text-decoration: line-through;
-          color: #bbb;
+          color: $color_gray2;
           a {
-            color: #bbb;
+            color: $color_gray2;
           }
         }
         &.command{
           cursor: pointer;
           position: relative;
-          top: -4px;
+          top: 0px;
         }
         a {
           color: $sub_color1;
@@ -245,8 +245,8 @@ body{
     &[type=submit] {
       width: 100%;
       border: none;
-      background: $color-orange;
-      color: #fff;
+      background: $color-red;
+      color: $color-white;
       width: auto;
       cursor: pointer;
       padding: 8px 10px;
@@ -310,7 +310,7 @@ body{
       background: $color-white;
       td{
         &:first-child{
-          color: $color-orange;
+          color: $color-red;
         }
         &:last-child{
           color: $base_color;
@@ -325,7 +325,7 @@ body{
       }
     }
     tfoot {
-      background-color: $color-orange;
+      background-color: $color-red;
       color: $txt_color2;
       &:hover {
         opacity: .9;
@@ -365,7 +365,7 @@ body{
   text-align: center;
   padding: 8px 0;
   margin: 5px auto 0;
-  background-color: $color-orange;
+  background-color: $color-red;
   color: $txt_color2;
   font-size: 16px;
   &:hover {
@@ -376,7 +376,7 @@ body{
 
 
 #mask {
-  background: rgba(0,0,0,.4);
+  background: rgba(0,0,0,.7);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -390,7 +390,7 @@ body{
 
 
 #modal {
-  background: #fff;
+  background: $color-white;
   width: 560px;
   padding: 20px;
   border-radius: 4px;
