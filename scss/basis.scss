@@ -164,6 +164,7 @@ body{
 ----------------------------------*/
 .main{
   width: 70%;
+  min-width: 290px;
   background-color: $color-white;
   padding: 5px;
   margin: 0 2%;
@@ -244,7 +245,7 @@ body{
       width: 100%;
       border: none;
       margin: 0 0 5px;
-      padding: 10px 20px;
+      padding: 10px 12px;
       box-sizing: border-box;
       background: #ececec;
       color: darken(#f9f9f9, 50%);
