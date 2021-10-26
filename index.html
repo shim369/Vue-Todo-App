@@ -39,6 +39,20 @@
       </nav>
     </div>
     <div class="wrap">
+      <section class="add-list">
+        <h2>
+          Todoを追加しよう！
+        </h2>
+        <form @submit.prevent="addItem" class="t-m5">
+          <div class="btns">
+            <input type="text" v-model="newItem" placeholder="Todo Title">
+            <input type="text" v-model="newLink" placeholder="URL">
+            <input type="submit" value="追加">
+          </div>
+        </form>
+      </section>
+    </div>
+    <div class="wrap">
       <main class="main">
         <h2 class="clearfix">
         Todo List
@@ -59,16 +73,6 @@
             <span @click="deleteItem(index)" class="command"><img src="img/batsu.png" alt="削除"></span>
           </li>
         </ul>
-        <p v-else class="start">
-            Todoを追加しよう！
-        </p>
-          <form @submit.prevent="addItem" class="t-m10">
-            <div class="btns">
-              <input type="text" v-model="newItem" placeholder="Todo Title">
-              <input type="text" v-model="newLink" placeholder="URL">
-              <input type="submit" value="追加">
-            </div>
-          </form>
       </main>
       <aside class="aside">
         <div class="timerbox">
