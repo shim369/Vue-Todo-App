@@ -40,14 +40,14 @@
     </div>
     <div class="wrap">
       <section class="add-list">
+        <form @submit.prevent="addItem">
         <h2>
           Todoを追加しよう！
+          <input type="submit" value="追加">
         </h2>
-        <form @submit.prevent="addItem" class="t-m5">
           <div class="btns">
             <input type="text" v-model="newItem" placeholder="Todo Title">
             <input type="text" v-model="newLink" placeholder="URL">
-            <input type="submit" value="追加">
           </div>
         </form>
       </section>

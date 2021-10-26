@@ -4,9 +4,9 @@
 
 body{
   font-family: $base_font;
-  background: $base_color;
-  background: -webkit-linear-gradient(top left, $sub_color2 0%,$sub_color1 100%);
-  background: linear-gradient(to bottom right, $sub_color2 0%,$sub_color1 100%);
+  background: $sub_color2;
+  // background: -webkit-linear-gradient(top left, $sub_color2 0%,$sub_color1 100%);
+  // background: linear-gradient(to bottom right, $sub_color2 0%,$sub_color1 100%);
   color: $sub_color1;
 }
 
@@ -175,6 +175,20 @@ body{
     font-style: italic;
     background-color: #2c394b;
     padding: 20px 15px 20px;
+    input {
+      float: right;
+      &[type=submit] {
+        border: none;
+        background: $color-red;
+        color: $color-white;
+        width: auto;
+        cursor: pointer;
+        padding: 3px 20px 3px;
+        &:hover {
+          opacity: .9;
+        }
+      }
+    }
   }
   form {
     .btns {
@@ -187,7 +201,7 @@ body{
         &[type=text] {
           width: 100%;
           border: none;
-          margin: 0 0 5px;
+          margin: 5px 0 0;
           padding: 10px 12px;
           box-sizing: border-box;
           background: $color_gray;
@@ -199,22 +213,9 @@ body{
             outline: none;
           }
         }
-        &[type=submit] {
-          width: 100%;
-          border: none;
-          background: $color-red;
-          color: $color-white;
-          width: auto;
-          cursor: pointer;
-          padding: 8px 10px;
-          &:hover {
-            opacity: .9;
-          }
-        }
       }
     }
   }
-
 }
 
 /* main
@@ -246,10 +247,8 @@ body{
       float: right;
       padding: 3px 20px 3px;
       cursor: pointer;
-      margin-right: 5px;
       background-color: $color-red;
       border: none;
-      border-radius: 3px;
       color: $color-white;
       &:hover{
         opacity: 0.9;
@@ -356,7 +355,7 @@ body{
       }
     }
     tfoot {
-      background-color: $color-red;
+      background-color: $sub_color1;
       color: $txt_color2;
       &:hover {
         opacity: .9;
