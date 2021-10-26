@@ -164,11 +164,13 @@ body{
 /* add-list
 ----------------------------------*/
 .add-list {
-  width: 96%;
-  margin: 0 auto;
-  padding: 5px;
+  margin: 0 auto 50px;
   background: #fff;
   box-sizing: border-box;
+  padding: 5px;
+  @include for-size(phone-only) {
+    margin-bottom: 30px;
+  }
   h2 {
     font-size: 22px;
     color: #fff;
@@ -223,12 +225,10 @@ body{
 .main{
   width: 70%;
   min-width: 290px;
-  background-color: $color-white;
-  padding: 5px;
   margin: 0 2%;
   box-shadow: 0px 3px 3px 3px rgba(42,63,102,0.2);
   @include for-size(phone-only) {
-    width: calc(96% - 10px);
+    width: 96%;
   }
   h2{
     font-size: 22px;
@@ -311,9 +311,6 @@ body{
 ----------------------------------*/
 .aside {
   margin: 0 2%;
-  @include for-size(phone-only) {
-    margin-top: 30px;
-  }
   table {
     width: 100%;
     border-collapse: collapse;
@@ -355,7 +352,7 @@ body{
       }
     }
     tfoot {
-      background-color: $sub_color1;
+      background-color: $color_red;
       color: $txt_color2;
       &:hover {
         opacity: .9;
