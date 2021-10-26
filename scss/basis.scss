@@ -333,8 +333,7 @@ body{
           opacity: 0.3;
         }
         &.today {
-          font-weight: bold;
-          background: $sub_gray;
+          background: $color_gray;
         }
       }
     }
@@ -366,8 +365,14 @@ body{
     display: flex;
     justify-content: space-around;
     button {
-      padding: 5px 20px;
+      padding: 8px 20px;
       cursor: pointer;
+      color: $sub_color2;
+      border: none;
+      background: $color_gray;
+      &:hover {
+        opacity: .8;
+      }
     }
   }
 }
