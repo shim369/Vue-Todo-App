@@ -118,6 +118,9 @@ body{
       &:nth-child(3) {
         transition-delay: .3s;
       }
+      &:nth-child(4) {
+        transition-delay: .4s;
+      }
       a {
         font-size: 23px;
         color: $color-white;
@@ -218,7 +221,14 @@ body{
         &.command{
           cursor: pointer;
           position: relative;
-          top: 0px;
+          top: -5px;
+          &:hover {
+            opacity: .8;
+          }
+          img {
+            width: 14px;
+            height: 14px;
+          }
         }
         a {
           color: $sub_color1;
