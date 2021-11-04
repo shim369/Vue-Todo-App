@@ -2,12 +2,19 @@
 @import "_vars.scss";
 @import "_mixin.scss";
 
+html {
+  height: 100%;
+}
+
 body{
   font-family: $base_font;
   background: $sub_color2;
   // background: -webkit-linear-gradient(top left, $sub_color2 0%,$sub_color1 100%);
   // background: linear-gradient(to bottom right, $sub_color2 0%,$sub_color1 100%);
   color: $sub_color1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* header & hamburgerMenu
@@ -17,12 +24,13 @@ body{
   display: flex;
   justify-content: space-between;
   background-color: $sub_color1;
-  box-shadow: 0px 3px 3px 3px rgba(42,63,102,0.2);
+  box-shadow: 0px 3px 3px 3px rgba(44,57,75,.7);
   position: relative;
   @include for-size(phone-only) {
     padding: 10px 0;
   }
   h1{
+    width: 180px;
     font-size: 40px;
     color: $txt_color2;
     font-style: italic;
@@ -64,24 +72,26 @@ body{
       list-style: none;
       display: flex;
       margin-right: 20px;
+      align-items: center;
       @include for-size(phone-only) {
         margin-right: 0px;
       }
       li{
-        padding: 10px 30px;
         font-size: 16px;
-        line-height: 1.5;
+        text-align: center;
         @include for-size(phone-only) {
           padding: 0 10px;
         }
         &:hover{
           opacity: .8;
         }
-        a{
+        a {
+          padding: 10px 20px;
           display: block;
           color: $txt_color2;
           text-decoration: none;
           font-weight: bold;
+          box-sizing: border-box;
         }
       }
     }
@@ -121,6 +131,9 @@ body{
       &:nth-child(4) {
         transition-delay: .4s;
       }
+      &:nth-child(5) {
+        transition-delay: .5s;
+      }
       a {
         font-size: 23px;
         color: $color-white;
@@ -154,6 +167,7 @@ body{
   display: flex;
   margin: 50px auto 0;
   justify-content: space-around;
+  flex: 1;
   @include for-size(phone-only) {
     width: 100%;
     margin: 30px auto 0;
@@ -163,11 +177,9 @@ body{
 
 /* main
 ----------------------------------*/
-.main{
-  width: 70%;
-  min-width: 290px;
+.main {
+  flex: 1;
   margin: 0 2%;
-  box-shadow: 0px 3px 3px 3px rgba(42,63,102,0.2);
   @include for-size(phone-only) {
     width: 96%;
   }
@@ -180,6 +192,7 @@ body{
   background: #fff;
   box-sizing: border-box;
   padding: 5px;
+  box-shadow: 0px 3px 3px 3px rgba(44,57,75,.7);
   @include for-size(phone-only) {
     margin-bottom: 30px;
   }
@@ -296,14 +309,22 @@ body{
 ----------------------------------*/
 .footer {
   width: 90%;
-  margin: 20px auto 0;
-  padding: 20px 0 10px;
+  margin: 0 auto 20px;
+  text-align: center;
+  small {
+    font-size: 14px;
+    color: $txt_color2;
+  }
 }
 
 /* aside
 ----------------------------------*/
 .aside {
+  width: 350px;
   margin: 0 2%;
+  @include for-size(phone-only) {
+    width: 96%;
+  }
   table {
     width: 100%;
     border-collapse: collapse;
@@ -311,7 +332,7 @@ body{
     font-size: 17px;
     margin-top: 50px;
     background-color: $color-white;
-    box-shadow: 0px 3px 3px 3px rgba(42,63,102,0.2);
+    box-shadow: 0px 3px 3px 3px rgba(44,57,75,.7);
     @include for-size(phone-only) {
       margin-top: 30px;
     }
@@ -356,10 +377,12 @@ body{
 /* timer
 ----------------------------------*/
 .timerbox {
+  box-sizing: border-box;
+  width: 100%;
   background-color: $color-white;
   padding: 5px;
   margin-bottom: 30px;
-  box-shadow: 0px 3px 3px 3px rgba(42,63,102,0.2);
+  box-shadow: 0px 3px 3px 3px rgba(44,57,75,.7);
   #timer{
     text-align: center;
     padding: 10px 15px 10px;
