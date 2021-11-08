@@ -64,8 +64,8 @@ body{
   }
   .pc-menu{
     position: relative;
-    transition: all .3s ease-in;
     margin-left: auto;
+    margin-right: 20px;
     display: block;
     @include for-size(phone-only) {
       display: none;
@@ -74,7 +74,6 @@ body{
     > ul {
       list-style: none;
       display: flex;
-      margin-right: 20px;
       align-items: center;
       @include for-size(phone-only) {
         margin-right: 0px;
@@ -208,8 +207,8 @@ body{
       position: relative;
       .menu__second-level {
         position: absolute;
-        top: 40px;
-        width: 100%;
+        top: 30px;
+        width: 114%;
         -webkit-transition: all .3s;
         transition: all .3s;
       }
