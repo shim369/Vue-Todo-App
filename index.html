@@ -47,6 +47,18 @@
     </div>
     <div class="wrap">
       <main class="main">
+      <section class="add-list">
+        <form @submit.prevent="addItem">
+        <h2 class="clearfix">
+          Todoを追加しよう！
+          <input type="submit" value="追加">
+        </h2>
+          <div class="btns">
+            <input type="text" v-model="newItem" placeholder="Todo Title">
+            <input type="text" v-model="newLink" placeholder="URL">
+          </div>
+        </form>
+      </section>
         <section class="add-list">
         <h2 class="clearfix">
         Todo List
@@ -68,18 +80,6 @@
           </li>
         </ul>
         <!-- <button v-on:click="reverseTodo">Reverse Todo</button> -->
-      </section>
-      <section class="add-list">
-        <form @submit.prevent="addItem">
-        <h2 class="clearfix">
-          Todoを追加しよう！
-          <input type="submit" value="追加">
-        </h2>
-          <div class="btns">
-            <input type="text" v-model="newItem" placeholder="Todo Title">
-            <input type="text" v-model="newLink" placeholder="URL">
-          </div>
-        </form>
       </section>
       </main>
       <aside class="aside">
