@@ -6,15 +6,15 @@
     data: {
       newItem: '',
       newLink: '',
-      todos: []
+      todos: [],
     },
     watch: {
       todos: {
         handler: function(){ 
             localStorage.setItem('todos', JSON.stringify(this.todos));
             //alert('Data saved!');
-          },
-          deep: true
+        },
+        deep: true
       }
     },
     mounted: function(){
@@ -40,21 +40,14 @@
         if (!confirm('チェックしたもの一括削除する?')){
           return;
         }
-        // this.todos = this.todos.filter(function(todo){
-        //   return !todo.isDone;
-        // });
         this.todos = this.remaining;
       }
     },
     computed: {
-       remaining: function(){
-      //   var items = this.todos.filter(function(todo){
-      //     return !todo.isDone;
-      //   });
-      //   return items.length;
-      return this.todos.filter(function(todo){
-        return !todo.isDone;
-      });
+      remaining: function(){
+        return this.todos.reverse().filter(function(todo){
+          return !todo.isDone;
+        });
       }
     }
   });

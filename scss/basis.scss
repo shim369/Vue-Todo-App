@@ -325,6 +325,8 @@ body{
   ul{
     list-style: none;
     border-top: 1px solid $color_gray;
+    overflow-y: scroll;
+    max-height: 600px;
     li{
       padding: 10px 20px;
       font-size: 16px;
