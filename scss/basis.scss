@@ -329,7 +329,7 @@ body{
   ul{
     list-style: none;
     border-top: 1px solid $color_gray;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 600px;
     li{
       padding: 10px 20px;
