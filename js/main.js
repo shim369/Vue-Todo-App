@@ -27,7 +27,7 @@
           link: this.newLink,
           isDone: false
         };
-        this.todos.push(item);
+        this.todos.unshift(item);
         this.newItem = '';
         this.newLink = '';
       },
@@ -45,7 +45,7 @@
     },
     computed: {
       remaining: function(){
-        return this.todos.reverse().filter(function(todo){
+        return this.todos.filter(function(todo){
           return !todo.isDone;
         });
       }
