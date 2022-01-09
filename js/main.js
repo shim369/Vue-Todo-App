@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  var vm = new Vue({
+  let vm = new Vue({
     el: '#app',
     data: {
       newItem: '',
@@ -23,6 +23,7 @@
     methods: {
       addItem: function(){
         var item = {
+          id: this.getUniqueId,
           title: this.newItem,
           link: this.newLink,
           isDone: false
@@ -31,9 +32,11 @@
         this.newItem = '';
         this.newLink = '';
       },
-      deleteItem: function(index){
+      deleteItem: function(todo){
         if (confirm('ホントに削除する?')){
-          this.todos.splice(index, 1);
+          
+          const pos = this.todos.indexOf(todo);
+          this.todos.splice(pos, 1);
         }
       },
       purge: function(){
@@ -48,6 +51,9 @@
         return this.todos.filter(function(todo){
           return !todo.isDone;
         });
+      },
+      getUniqueId: function(){
+        return new Date().getTime().toString(36) + '-' + Math.random().toString(36);
       }
     }
   });

@@ -66,7 +66,8 @@
         <button @click="purge">一括削除</button>
         </h2>
         <ul v-if="todos.length">
-          <li v-for="(todo, index) in todos">
+          <!-- <li v-for="(todo, index) in todos"> -->
+          <li v-for="todo in todos">
             <input class="blue" type="checkbox" v-model="todo.isDone">
             <span :class="{done: todo.isDone}">
               <span v-if="todo.link">
@@ -76,7 +77,7 @@
                 {{ todo.title }}
               </span>
             </span>
-            <span @click="deleteItem(index)" class="command"><img src="img/batsu.png" alt="削除"></span>
+            <span @click="deleteItem(todo.id)" class="command"><img src="img/batsu.png" alt="削除"></span>
           </li>
         </ul>
         <!-- <button v-on:click="reverseTodo">Reverse Todo</button> -->
