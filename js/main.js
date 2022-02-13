@@ -23,7 +23,6 @@
     methods: {
       addItem: function(){
         var item = {
-          id: this.getUniqueId,
           title: this.newItem,
           link: this.newLink,
           isDone: false
@@ -32,11 +31,9 @@
         this.newItem = '';
         this.newLink = '';
       },
-      deleteItem: function(todo){
+      deleteItem: function(index){
         if (confirm('ホントに削除する?')){
-          
-          const pos = this.todos.indexOf(todo);
-          this.todos.splice(pos, 1);
+          this.todos.splice(index, 1);
         }
       },
       purge: function(){
@@ -51,9 +48,6 @@
         return this.todos.filter(function(todo){
           return !todo.isDone;
         });
-      },
-      getUniqueId: function(){
-        return new Date().getTime().toString(36) + '-' + Math.random().toString(36);
       }
     }
   });

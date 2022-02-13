@@ -9,12 +9,7 @@ html {
 body{
   font-family: $base_font;
   background: $sub_color2;
-  // background: -webkit-linear-gradient(top left, $sub_color2 0%,$sub_color1 100%);
-  // background: linear-gradient(to bottom right, $sub_color2 0%,$sub_color1 100%);
   color: $sub_color1;
-  // display: flex;
-  // flex-direction: column;
-  // height: 100%;
 }
 /* header & hamburgerMenu
 ----------------------------------*/
@@ -327,12 +322,13 @@ body{
     overflow-y: auto;
     max-height: 600px;
     li{
-      padding: 10px 20px;
+      padding: 10px 37px 10px 20px;
       font-size: 16px;
       line-height: 1.5;
       padding-left: 2em;
       text-indent: -1.5em;
       border-bottom: 1px solid $color_gray;
+      position: relative;
       &:nth-child(odd){
         background-color: $color_gray;
       }
@@ -346,8 +342,9 @@ body{
         }
         &.command{
           cursor: pointer;
-          position: relative;
-          top: -5px;
+          position: absolute;
+          top: 16%;
+          right: 0;
           &:hover {
             opacity: .8;
           }
@@ -364,18 +361,6 @@ body{
         }
       }
     }
-  }
-}
-
-/* footer
-----------------------------------*/
-.footer {
-  width: 100%;
-  padding: 20px 0;
-  text-align: center;
-  small {
-    font-size: 14px;
-    color: $txt_color2;
   }
 }
 
